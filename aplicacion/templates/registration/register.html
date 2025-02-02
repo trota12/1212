@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}  <!-- Cargar Crispy Forms aquí -->
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/registro.css' %}">
+
+<div class="form-registro">
+    <form method="post" class="registro-form">
+        {% csrf_token %}
+        {{ form.username|as_crispy_field }}
+        {{ form.email|as_crispy_field }}
+        {{ form.first_name|as_crispy_field }}
+        {{ form.second_name|as_crispy_field }}
+        {{ form.last_name|as_crispy_field }}
+        {{ form.second_last_name|as_crispy_field }}
+        {{ form.rut|as_crispy_field }}
+        {{ form.password1|as_crispy_field }}
+        {{ form.password2|as_crispy_field }}
+        <button type="submit" class="btn-registro">Crear cuenta</button>
+    </form>
+</div>
+{% endblock %}
+<script src="{% static 'js/registro.js' %}"></script>

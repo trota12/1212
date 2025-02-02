@@ -1,0 +1,32 @@
+<!-- proceder_pago.html -->
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h1>Proceder al Pago</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.producto.nombre }}</td>
+                <td>{{ item.cantidad }}</td>
+                <td>${{ item.producto.precio }}</td>
+                <td>${{ item.producto.precio * item.cantidad }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>Total: ${{ total }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Pagar Ahora</button>
+    </form>
+</div>
+{% endblock %}

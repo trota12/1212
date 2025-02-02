@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+    <form method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Carro ({{ items.count }} producto{{ items.count|pluralize:"s" }})</h2>
+                {% for item in items %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.producto.nombre }}</h5>
+                        <p class="card-text">{{ item.producto.descripcion }}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>${{ item.producto.precio }}</span>
+                            <div>
+                                <input type="number" name="cantidad_{{ item.id }}" value="{{ item.cantidad }}" min="1" max="{{ item.producto.stock }}">
+                                <button type="submit" name="eliminar" value="{{ item.id }}" class="btn btn-danger">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Resumen de la compra</h5>
+                        <p>Total: ${{ total }}</p>
+                        <a href="{% url 'iniciar_pago' %}" class="btn btn-success">Pagar con Webpay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

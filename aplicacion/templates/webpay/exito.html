@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>Pago Exitoso!</h2>
+    <p>Pago Aceptado!</p>
+    <p>Numero de Orden: {{ response.buy_order }}</p>
+    <p>Monto: ${{ response.amount }}</p>
+    <p>Fecha: {{ response.transaction_date }}</p>
+    <a href="{% url 'index' %}" class="btn btn-primary">Volver al inicio</a>
+</div>
+{% endblock %}

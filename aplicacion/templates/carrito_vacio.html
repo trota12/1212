@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/carrito.css' %}">
+
+<div class="container text-center my-5">
+    <h2>Tu Carro está vacío</h2>
+    <p>Inicia sesión para ver los productos que habías guardado en tu Carro.</p>
+    <a href="{% url 'login' %}" class="btn btn-primary">Iniciar sesión</a>
+    <a href="{% url 'register' %}" class="btn btn-secondary">Registrarse</a>
+</div>
+{% endblock %}

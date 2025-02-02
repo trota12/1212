@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>Pago Rechazado</h2>
+    <p>Lo sentimos, hubo un problema con tu pago.</p>
+    <a href="{% url 'ver_carrito' %}" class="btn btn-warning">Volver al carrito</a>
+</div>
+{% endblock %}

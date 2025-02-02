@@ -1,0 +1,76 @@
+body{
+    background-image: url("../img/fondo\ definitivo.jpg");
+}
+ 
+.menu{
+    background-color: azure;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+#productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las imágenes */
+    gap: 15px; /* Espaciado uniforme entre imágenes */
+}
+
+#productos .producto {
+    width: 200px; /* Ancho fijo para todos los productos */
+    height: 200px; /* Alto fijo para todos los productos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Recorta contenido sobrante */
+    border: 1px solid #ddd; /* Opcional: borde alrededor del producto */
+    border-radius: 5px; /* Opcional: bordes redondeados */
+    background-color: #f9f9f9; /* Opcional: color de fondo */
+}
+
+#productos .producto img {
+    width: 100%; /* La imagen llena todo el ancho del contenedor */
+    height: 100%; /* La imagen llena todo el alto del contenedor */
+    object-fit: cover; /* Ajusta la imagen para que no se deforme */
+    border-radius: 5px; /* Opcional: bordes redondeados */
+}
+
+
+/* Asegura que el HTML y BODY ocupen toda la altura de la pantalla */
+html, body {
+    height: 100%;
+    margin: 0; /* Elimina cualquier margen predeterminado */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Asegura que el contenedor principal llene el espacio disponible */
+main {
+    flex: 1; /* El contenido principal se expande para ocupar el espacio restante */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ajusta el footer para que siempre se quede abajo */
+footer {
+    margin-top: auto; /* Empuja el footer hacia abajo */
+    background-color: #333; /* Color del footer */
+    color: white; /* Texto del footer */
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+
+/*  CSS PARA EL REGISTRO */
+
+body.centered {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
